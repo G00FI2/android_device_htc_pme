@@ -48,7 +48,7 @@ TW_THEME := portrait_hdpi
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_INCLUDE_CRYPTO := true
-TW_CRYPTO_USE_SYSTEM_VOLD := qseecomd hwservicemanager keymaster-3-0
+TW_CRYPTO_USE_SYSTEM_VOLD := qseecomd hwservicemanager servicemanager keymaster-3-0
 TW_INCLUDE_NTFS_3G := true
 #TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_NO_EXFAT_FUSE := true
@@ -64,8 +64,3 @@ TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/system/usr/share/zoneinfo/tzdata
 
 # Vendor Init
 BOARD_VENDOR := htc
-TARGET_INIT_VENDOR_LIB := libinit_$(TARGET_DEVICE)
-TARGET_UNIFIED_DEVICE := true
-
-# Additional sepolicy for hwservicemanager
-BOARD_SEPOLICY_DIRS += device/htc/$(TARGET_DEVICE)/sepolicy
