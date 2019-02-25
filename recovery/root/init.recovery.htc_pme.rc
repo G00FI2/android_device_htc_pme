@@ -1,9 +1,5 @@
 import init.recovery.qcom_decrypt.rc
 
-on init
-    # Load Tuxera exfat module
-    insmod /system/lib/modules/texfat.ko
-
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
@@ -14,6 +10,7 @@ on offmode_charging
 
 on boot
     export LD_PRELOAD /sbin/liblog_htc_sbin.so
+    export LD_CONFIG_FILE /sbin/ld.config.txt
 
     start chargeled
 
