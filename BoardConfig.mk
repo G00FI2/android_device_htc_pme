@@ -53,16 +53,16 @@ TW_INCLUDE_NTFS_3G := true
 #TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_NO_EXFAT_FUSE := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
-TARGET_RECOVERY_DEVICE_MODULES := chargeled liblog_htc_sbin tzdata hwservicemanager servicemanager android.hidl.base@1.0 libsoftkeymasterdevice libkeymaster_messages libkeymaster_portable # strace twrpdec
-TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(TARGET_OUT)/usr/share/zoneinfo/tzdata $(TARGET_OUT)/bin/hwservicemanager $(TARGET_OUT)/bin/servicemanager $(TARGET_OUT)/lib64/android.hidl.base@1.0.so $(TARGET_OUT)/lib64/libsoftkeymasterdevice.so $(TARGET_OUT)/lib64/libkeymaster_messages.so $(TARGET_OUT)/lib64/libkeymaster_portable.so
+TARGET_RECOVERY_DEVICE_MODULES := chargeled liblog_htc_sbin tzdata hwservicemanager servicemanager android.hidl.base@1.0 # strace twrpdec
+TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(TARGET_OUT)/usr/share/zoneinfo/tzdata $(TARGET_OUT)/bin/hwservicemanager $(TARGET_OUT)/bin/servicemanager $(TARGET_OUT)/lib64/android.hidl.base@1.0.so
 TW_USE_TOOLBOX := true
 
 # TWRP Debug Flags
 #TWRP_EVENT_LOGGING := true
-TARGET_USES_LOGD := true
-TWRP_INCLUDE_LOGCAT := true
-TARGET_RECOVERY_DEVICE_MODULES += debuggerd # strace
-TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(TARGET_OUT_EXECUTABLES)/debuggerd # $(TARGET_OUT_OPTIONAL_EXECUTABLES)/strace
+#TARGET_USES_LOGD := true
+#TWRP_INCLUDE_LOGCAT := true
+#TARGET_RECOVERY_DEVICE_MODULES += debuggerd # strace
+#TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(TARGET_OUT_EXECUTABLES)/debuggerd # $(TARGET_OUT_OPTIONAL_EXECUTABLES)/strace
 #TARGET_RECOVERY_DEVICE_MODULES += twrpdec
 #TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(TARGET_RECOVERY_ROOT_OUT)/sbin/twrpdec
 #TW_CRYPTO_SYSTEM_VOLD_DEBUG := true

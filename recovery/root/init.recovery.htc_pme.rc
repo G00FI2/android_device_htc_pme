@@ -1,8 +1,4 @@
-import init.recovery.qcom_decrypt.rc
-
-on fs
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+import init.recovery.qcom.rc
 
 on offmode_charging
     start detect_key
@@ -10,7 +6,6 @@ on offmode_charging
 
 on boot
     export LD_PRELOAD /sbin/liblog_htc_sbin.so
-    export LD_CONFIG_FILE /sbin/ld.config.txt
 
     start chargeled
 
@@ -26,4 +21,3 @@ service detect_key /sbin/detect_key
 service offmode_charging /sbin/offmode_charging
     disabled
     seclabel u:r:healthd:s0
-
