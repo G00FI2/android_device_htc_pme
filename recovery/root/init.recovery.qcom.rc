@@ -1,8 +1,13 @@
 import init.recovery.qcom_decrypt.rc
 
-on fs
+on init
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    start sarcheck
 
-on boot
-    export LD_CONFIG_FILE /sbin/ld.config.txt
+service sarcheck /sbin/sarcheck.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
